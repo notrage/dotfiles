@@ -1,5 +1,5 @@
 -- DECLARE SOME FUNCTIONS FOR CODE LISIBILITY
--- Helper fucntion to the header generation
+-- Helper function to the header generation
 local function gen_header(width)
 	local to_center = string.rep(" ", math.floor((width - 63) / 2))
 
@@ -20,8 +20,10 @@ end
 
 -- Helper function to truncate long descriptions
 local function truncate_desc(desc, width)
-	local max_desc_length = width - 12 -- Allows space for key, padding, and box border
-	return #desc > max_desc_length and (desc:sub(1, max_desc_length - 3) .. "...") or desc
+	local key_space = 12
+	local margin = 6
+	local max_desc_length = width - key_space -- Allows space for key, padding, and box border
+	return #desc > max_desc_length - margin and (desc:sub(1, max_desc_length - margin) .. "...") or desc
 end
 
 -- Helper function to the box_lines generation
@@ -72,11 +74,11 @@ function M.open()
 	local win = vim.api.nvim_open_win(buf, true, opts)
 
 	-- Determine the number of columns dynamically based on the available width
-	local box_width = 50
+	local box_width = 41
 	local num_columns = math.floor((width - 6) / (box_width + 2))
 
 	-- Start to declare the cheatsheet content
-    local lines = gen_header(width)
+	local lines = gen_header(width)
 
 	-- Convert the mappings table into a sortable list of categories
 	local sorted_categories = {}
@@ -120,30 +122,30 @@ function M.open()
 		end
 	end
 
-    -- The space that we can exploit in order to center the boxes
-    local remaining_space = (width - (num_columns * box_width))-1
-    local between_boxes_space = 5
-    remaining_space = remaining_space - between_boxes_space * (num_columns - 1)
-    left_margin = math.floor(remaining_space / 2)
+	-- The space that we can exploit in order to center the boxes
+	local remaining_space = (width - (num_columns * box_width)) - 1
+	local between_boxes_space = 5
+	remaining_space = remaining_space - between_boxes_space * (num_columns - 1)
+	left_margin = math.floor(remaining_space / 2)
 
 	-- Arrange boxes in columns
-    for i = 1, #padded_boxes, num_columns do
-        for line_idx = 1, #padded_boxes[i] do
-            local row = string.rep(" ", left_margin)
-            for col = 0, num_columns - 1 do
-                local box = padded_boxes[i + col]
-                if box and box[line_idx] then
-                    row = row .. box[line_idx]
-                    -- Add space only if it's not the last box in the row
-                    if col < num_columns - 1 and i + col < #padded_boxes then
-                        row = row .. string.rep(" ", between_boxes_space)
-                    end
-                end
-            end
-            table.insert(lines, row)
-        end
-        table.insert(lines, "")
-    end
+	for i = 1, #padded_boxes, num_columns do
+		for line_idx = 1, #padded_boxes[i] do
+			local row = string.rep(" ", left_margin)
+			for col = 0, num_columns - 1 do
+				local box = padded_boxes[i + col]
+				if box and box[line_idx] then
+					row = row .. box[line_idx]
+					-- Add space only if it's not the last box in the row
+					if col < num_columns - 1 and i + col < #padded_boxes then
+						row = row .. string.rep(" ", between_boxes_space)
+					end
+				end
+			end
+			table.insert(lines, row)
+		end
+		table.insert(lines, "")
+	end
 
 	-- Add content to the buffer
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)

@@ -2,22 +2,26 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Optional: suppress warning about instant prompt
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-# For mandelbrot ssh connection
-alias mandelbrot="ssh groussod@im2ag-mandelbrot.univ-grenoble-alpes.fr"
-
 # For nvim shortcut
 alias nv="nvim"
+
+# Delete .DS_Store files
+alias ds_store_del="~/scripts/clean_ds_store.sh"
 
 # For the lima vm start, stop and launch
 alias vm="~/scripts/toggle_lima.sh"
 alias vm_on="limactl start ubuntux86_64 && limactl shell ubuntux86_64"
 alias vm_off="limactl stop ubuntux86_64"
+
+# For python engine
+export PATH="/usr/local/bin:$PATH"
 
 # For the jenv engine
 export PATH="$HOME/.jenv/bin:$PATH"

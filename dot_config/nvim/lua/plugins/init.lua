@@ -58,13 +58,6 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
 	},
-	-- Surrounding plugin
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		opts = {},
-	},
 	-- Code deplacements plugin
 	{
 		"ggandor/leap.nvim",
@@ -76,4 +69,34 @@ return {
 		},
 		lazy = false,
 	},
+
+    -- DON'T NEED OF THIS ATM
+	-- -- Surrounding plugin
+	-- {
+	-- 	"kylechui/nvim-surround",
+	-- 	version = "*",
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- },
+	-- -- GitHub Copilot plugin
+	-- {
+	-- 	"github/copilot.vim",
+	-- 	lazy = false, -- Ensure it's not loaded lazily
+	-- 	config = function()
+	-- 		vim.g.copilot_no_tab_map = true -- Disable default <Tab> mapping
+	-- 		vim.api.nvim_set_keymap("i", "<leader><Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+	-- 	end,
+	-- },
+	-- -- Copilot Chat plugin
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",
+	-- 	lazy = false,
+	-- 	branch = "canary",
+	-- 	dependencies = {
+	-- 		{ "github/copilot.vim" },
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 	},
+	-- 	build = "make tiktoken", -- Only on MacOS or Linux
+	-- 	opts = {},
+	-- },
 }
