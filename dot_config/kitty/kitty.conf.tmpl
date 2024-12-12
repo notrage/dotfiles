@@ -1,8 +1,8 @@
+{{- if eq .chezmoi.os "darwin" }}
 # New window
 map cmd+enter new_window_with_cwd
 map ctrl+shift+enter new_window
 
-{{- if eq .chezmoi.os "darwin" }}
 # For window swap
 map cmd+h neighboring_window left
 map cmd+l neighboring_window right
@@ -23,23 +23,18 @@ map cmd+§ sixth_window
 map cmd+è seventh_window
 map cmd+! eighth_window
 map cmd+ç ninth_window
-# I'M NEWWWWWWWWWWWWWWWWWWWWWWWW
-
-{{- else }}
-# Linux Example
-{{- end }}
+# TEST
 
 # Layout managment
 map cmd+shift+v goto_layout horizontal
 map cmd+shift+h goto_layout vertical
 map cmd+shift+f goto_layout fat
 map cmd+shift+t goto_layout tall
- 
+{{- else }}
+
 # Deleting tab management
 map cmd+t no_op
 
-# Font Parameters
-font_family      family='JetBrainsMono Nerd Font Mono' postscript_name=JetBrainsMonoNFM-Regular
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+# Font parameters
+font_size 13.0
+{{- end }}
