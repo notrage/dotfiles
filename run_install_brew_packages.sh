@@ -6,6 +6,7 @@ set -e
 echo 'Installing formulae...'
 brew install \
 adwaita-icon-theme \
+age \
 aom \
 assimp \
 at-spi2-core \

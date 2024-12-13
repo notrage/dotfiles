@@ -9,7 +9,7 @@ if command -v brew &>/dev/null; then
   echo "Generating Homebrew installation script..."
 
   # Get the top-level formulae from brew deps --tree output
-  TOP_LEVEL_FORMULAE=$(brew deps --tree --1 --installed | grep -E '^[^\s]' | sort | uniq)
+  TOP_LEVEL_FORMULAE=$(brew list --formulae)
 
   # Get the list of installed casks
   BREW_CASKS=$(brew list --cask)
