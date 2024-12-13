@@ -94,8 +94,6 @@ local telescope_mappings = {
 }
 
 local nvim_tree_mappings = {
-    { mode = "s", key = "q", cmd = "q", desc = "Close nvim-tree" },
-    { mode = "s", key = "R", cmd = "R", desc = "Refresh nvim-tree" },
     { mode = "s", key = "<CR>", cmd = "<CR>", desc = "Open file" },
     { mode = "s", key = "<CR>", cmd = "<CR>", desc = "Expand/Collapse directory" },
     { mode = "s", key = "a", cmd = "a", desc = "Create file" },
@@ -106,7 +104,6 @@ local nvim_tree_mappings = {
     { mode = "s", key = "x", cmd = "x", desc = "Cut file" },
     { mode = "s", key = "y", cmd = "y", desc = "Copy filename" },
     { mode = "s", key = "Y", cmd = "Y", desc = "Copy relative file path" },
-    { mode = "s", key = "ge", cmd = "ge", desc = "Copy file basename" },
     { mode = "s", key = "gy", cmd = "gy", desc = "Copy file absolute path" },
 }
 
@@ -117,10 +114,6 @@ local lsp_mappings = {
 	{ mode = "n", key = "<leader>r", cmd = "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename symbol" },
 	{ mode = "n", key = "<leader>fm", cmd = "<cmd>lua require('conform').format()<CR>", desc = "Format file" },
 }
-
--- local github_copilot_mappings = {
---     { mode = "n", key = "<leader}
--- }
 
 -- Now, gather all the categories in a single global list for easy iteration
 local mappings = {
