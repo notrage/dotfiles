@@ -63,25 +63,16 @@ local general_mappings = {
 local toggle_mappings = {
 	{ mode = "n", key = "<leader>n", cmd = "<cmd>set nu!<CR>", desc = "Toggle line numbers" },
 	{ mode = "n", key = "<leader>rn", cmd = "<cmd>set rnu!<CR>", desc = "Toggle relative line numbers" },
-	{
-		mode = "n",
-		key = "<leader>ch",
-		cmd = "<cmd>lua require('custom.cheatsheet').open()<CR>",
-		desc = "Toggle Cheatsheet",
-	},
+	{ mode = "n", key = "<leader>ch", cmd = "<cmd>lua require('custom.cheatsheet').open()<CR>", desc = "Toggle Cheatsheet" },
 	{ mode = "n", key = "<leader>sl", cmd = "z=", desc = "Toggle spell check" },
 	{ mode = "s", key = "gcc", cmd = "gcc", desc = "Toggle comment line" },
 	{ mode = "s", key = "gc", cmd = "gc", desc = "Toggle comment line" },
 }
 
 local buffer_mappings = {
-	{
-		mode = "n",
-		key = "<leader>x",
-		cmd = "<cmd>lua require('nvchad.tabufline').close_buffer()<CR>",
-		desc = "Close buffer",
-	},
+	{ mode = "n", key = "<leader>x", cmd = "<cmd>lua require('nvchad.tabufline').close_buffer()<CR>", desc = "Close buffer"	},
 	{ mode = "n", key = "<tab>", cmd = "<cmd>lua require('nvchad.tabufline').next()<CR>", desc = "Go to next buffer" },
+    { mode = "n", key = "<S-tab>", cmd = "<cmd>lua require('nvchad.tabufline').prev()<CR>", desc = "Go to prev buffer" },
 	{ mode = "n", key = "<C-n>", cmd = "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
 	{ mode = "n", key = "<leader>e", cmd = "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
 	{ mode = "n", key = "<C-h>", cmd = "<C-w>h", desc = "Move to left window" },
@@ -94,19 +85,9 @@ local telescope_mappings = {
 	{ mode = "n", key = "<leader>fw", cmd = "<cmd>Telescope live_grep<CR>", desc = "Live grep" },
 	{ mode = "n", key = "<leader>fb", cmd = "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
 	{ mode = "n", key = "<leader>fo", cmd = "<cmd>Telescope oldfiles<CR>", desc = "Find old files" },
-	{
-		mode = "n",
-		key = "<leader>fz",
-		cmd = "<cmd>Telescope current_buffer_fuzzy_find<CR>",
-		desc = "Find in current buffer",
-	},
+	{ mode = "n", key = "<leader>fz", cmd = "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Find in current buffer" },
 	{ mode = "n", key = "<leader>ff", cmd = "<cmd>Telescope find_files<CR>", desc = "Find files" },
-	{
-		mode = "n",
-		key = "<leader>fa",
-		cmd = "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-		desc = "Find all files (hidden)",
-	},
+	{ mode = "n", key = "<leader>fa", cmd = "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "Find all files (hidden)" },
 	{ mode = "n", key = "<leader>cm", cmd = "<cmd>Telescope git_commits<CR>", desc = "Git commits" },
 	{ mode = "n", key = "<leader>gt", cmd = "<cmd>Telescope git_status<CR>", desc = "Git status" },
 	{ mode = "n", key = "<leader>th", cmd = "<cmd>Telescope themes<CR>", desc = "NvChad themes" },

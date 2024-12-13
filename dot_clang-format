@@ -1,0 +1,19 @@
+Language:        Cpp
+BasedOnStyle:    LLVM
+IndentWidth:     4
+UseTab:          Never
+BreakBeforeBraces: Allman
+BraceWrapping:
+  AfterClass:    true
+  AfterControlStatement: true
+  AfterEnum:     true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct:   true
+  BeforeElse:    true
+  IndentBraces:  false
+ColumnLimit:     100
+SpaceBeforeParens: Always
+AllowShortIfStatementsOnASingleLine: false
+AlignTrailingComments: true
+BinPackParameters: false
