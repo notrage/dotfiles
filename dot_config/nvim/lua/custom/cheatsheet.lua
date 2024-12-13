@@ -74,7 +74,7 @@ function M.open()
 	local win = vim.api.nvim_open_win(buf, true, opts)
 
 	-- Determine the number of columns dynamically based on the available width
-	local box_width = 41
+	local box_width = 49
 	local num_columns = math.floor((width - 6) / (box_width + 2))
 
 	-- Start to declare the cheatsheet content

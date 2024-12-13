@@ -12,7 +12,6 @@ assimp \
 at-spi2-core \
 autoconf \
 automake \
-bentobox \
 berkeley-db@5 \
 black \
 brotli \
@@ -65,7 +64,6 @@ jbig2dec \
 jenv \
 jpeg-turbo \
 jpeg-xl \
-kitty \
 latexindent \
 leptonica \
 libarchive \
@@ -147,9 +145,13 @@ python@3.11 \
 python@3.13 \
 qemu \
 qt \
-rar \
 readline \
 ripgrep \
+shared-mime-info \
+shfmt \
+snappy \
+sqlite \
+stylua \
 tesseract \
 texinfo \
 tree \
@@ -163,148 +165,7 @@ xorgproto \
 xz \
 yapf \
 zlib \
-zstd \
-├── aom \
-├── assimp \
-├── at-spi2-core \
-└── autoconf \
-├── berkeley-db@5 \
-├── brotli \
-├── c-ares \
-└── ca-certificates \
-├── ca-certificates \
-├── cairo \
-├── capstone \
-├── dbus \
-├── double-conversion \
-├── dtc \
-├── fontconfig \
-└── freetype \
-├── freetype \
-├── fribidi \
-├── gd \
-└── gdbm \
-├── gdk-pixbuf \
-└── gettext \
-├── gettext \
-├── ghostscript \
-├── giflib \
-└── glib \
-├── glib \
-└── gmp \
-├── gmp \
-├── gnutls \
-├── graphite2 \
-├── gsettings-desktop-schemas \
-├── gtk+3 \
-└── harfbuzz \
-├── harfbuzz \
-├── hicolor-icon-theme \
-├── highway \
-├── hunspell \
-└── icu4c@76 \
-├── icu4c@76 \
-├── imath \
-├── isl \
-├── jasper \
-├── jbig2dec \
-└── jpeg-turbo \
-├── jpeg-turbo \
-├── jpeg-xl \
-├── leptonica \
-├── libarchive \
-├── libavif \
-├── libb2 \
-├── libcerf \
-├── libde265 \
-└── libdeflate \
-├── libepoxy \
-├── libevent \
-├── libheif \
-├── libidn \
-├── libidn2 \
-├── liblqr \
-├── libmng \
-├── libmpc \
-├── libnghttp2 \
-└── libomp \
-└── libpng \
-├── libpng \
-├── libraw \
-└── librsvg \
-├── libslirp \
-├── libssh \
-└── libtasn1 \
-├── libtasn1 \
-└── libtiff \
-├── libtiff \
-├── libtool \
-└── libunistring \
-├── libunistring \
-├── libusb \
-└── libuv \
-├── libuv \
-└── libvmaf \
-├── libvterm \
-├── libx11 \
-├── libxau \
-├── libxcb \
-└── libxdmcp \
-├── libxext \
-├── libxfixes \
-├── libxi \
-├── libxrender \
-├── libxtst \
-└── little-cms2 \
-├── little-cms2 \
-├── lpeg \
-├── lua \
-├── luajit \
-├── luv \
-├── lz4 \
-├── lzo \
-└── m4 \
-├── md4c \
-├── mpdecimal \
-└── mpfr \
-├── mpfr \
-├── msgpack \
-├── ncurses \
-├── nettle \
-└── node \
-├── openexr \
-└── openjdk \
-├── openjpeg \
-└── openssl@3 \
-├── openssl@3 \
-├── p11-kit \
-├── pango \
-└── pcre2 \
-├── pcre2 \
-└── perl \
-├── pixman \
-├── python-packaging \
-└── python@3.13 \
-├── python@3.13 \
-├── qt \
-└── readline \
-├── readline \
-├── shared-mime-info \
-├── snappy \
-├── sqlite \
-└── tesseract \
-├── tree-sitter \
-├── unbound \
-└── unibilium \
-├── vde \
-└── webp \
-├── webp \
-└── x265 \
-└── xorgproto \
-├── xorgproto \
-└── xz \
-├── xz \
-└── zstd 
+zstd 
 
 echo 'Installing casks...'
 brew install --cask \

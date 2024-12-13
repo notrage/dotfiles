@@ -9,7 +9,7 @@ if command -v brew &>/dev/null; then
   echo "Generating Homebrew installation script..."
 
   # Get the top-level formulae from brew deps --tree output
-  TOP_LEVEL_FORMULAE=$(brew list --formulae)
+  BREW_FORMULAES=$(brew list --formulae)
 
   # Get the list of installed casks
   BREW_CASKS=$(brew list --cask)
@@ -22,10 +22,10 @@ if command -v brew &>/dev/null; then
   echo "" >> "$BREW_OUTPUT_SCRIPT"
 
   # Add top-level formulae to the script
-  if [ -n "$TOP_LEVEL_FORMULAE" ]; then
+  if [ -n "$BREW_FORMULAES" ]; then
     echo "echo 'Installing formulae...'" >> "$BREW_OUTPUT_SCRIPT"
     echo "brew install \\" >> "$BREW_OUTPUT_SCRIPT"
-    echo "$TOP_LEVEL_FORMULAE" | sed 's/$/ \\/' >> "$BREW_OUTPUT_SCRIPT"
+    echo "$BREW_FORMULAES" | sed 's/$/ \\/' >> "$BREW_OUTPUT_SCRIPT"
     sed -i '' '$ s/\\//' "$BREW_OUTPUT_SCRIPT"  # Remove trailing backslash on the last line (macOS compatible)
     echo "" >> "$BREW_OUTPUT_SCRIPT"
   fi

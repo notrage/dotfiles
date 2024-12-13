@@ -93,6 +93,23 @@ local telescope_mappings = {
 	{ mode = "n", key = "<leader>th", cmd = "<cmd>Telescope themes<CR>", desc = "NvChad themes" },
 }
 
+local nvim_tree_mappings = {
+    { mode = "s", key = "q", cmd = "q", desc = "Close nvim-tree" },
+    { mode = "s", key = "R", cmd = "R", desc = "Refresh nvim-tree" },
+    { mode = "s", key = "<CR>", cmd = "<CR>", desc = "Open file" },
+    { mode = "s", key = "<CR>", cmd = "<CR>", desc = "Expand/Collapse directory" },
+    { mode = "s", key = "a", cmd = "a", desc = "Create file" },
+    { mode = "s", key = "d", cmd = "d", desc = "Delete file" },
+    { mode = "s", key = "r", cmd = "r", desc = "Rename file" },
+    { mode = "s", key = "c", cmd = "c", desc = "Copy file" },
+    { mode = "s", key = "p", cmd = "p", desc = "Paste file" },
+    { mode = "s", key = "x", cmd = "x", desc = "Cut file" },
+    { mode = "s", key = "y", cmd = "y", desc = "Copy filename" },
+    { mode = "s", key = "Y", cmd = "Y", desc = "Copy relative file path" },
+    { mode = "s", key = "ge", cmd = "ge", desc = "Copy file basename" },
+    { mode = "s", key = "gy", cmd = "gy", desc = "Copy file absolute path" },
+}
+
 local lsp_mappings = {
 	{ mode = "n", key = "gd", cmd = "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to definition" },
 	{ mode = "n", key = "gD", cmd = "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Go to declaration" },
@@ -112,6 +129,7 @@ local mappings = {
 	toggle = toggle_mappings,
 	buffer = buffer_mappings,
 	telescope = telescope_mappings,
+    nvim_tree = nvim_tree_mappings,
 	lsp = lsp_mappings,
 }
 
