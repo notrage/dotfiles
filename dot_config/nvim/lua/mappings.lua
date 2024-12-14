@@ -54,6 +54,7 @@ local general_mappings = {
 	{ mode = "n", key = "<Esc>", cmd = "<cmd>noh<CR>", desc = "Clear highlights" },
 	{ mode = "n", key = "<C-s>", cmd = "<cmd>w<CR>", desc = "Save file" },
 	{ mode = "n", key = "<C-c>", cmd = "<cmd>%y*<CR>", desc = "Copy whole file" },
+	{ mode = "n", key = "<C-a>", cmd = "gg0vG$", desc = "Select all file content" },
 	{ mode = "n", key = ";", cmd = ":", desc = "Enter command mode" },
 	{ mode = "n", key = "gx", cmd = "gx", desc = "Open file link" },
 	{ mode = "n", key = '"', cmd = '"', desc = "Open registers list" },
