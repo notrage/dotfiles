@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Paths for the output scripts
-BREW_OUTPUT_SCRIPT="$HOME/.local/share/chezmoi/scripts/executable_install_brew_packages.sh"
-APT_OUTPUT_SCRIPT="$HOME/.local/share/chezmoi/scripts/executable_install_apt_packages.sh"
+BREW_OUTPUT_SCRIPT="$HOME/scripts/install_brew_packages.sh"
+APT_OUTPUT_SCRIPT="$HOME/scripts/install_apt_packages.sh"
 
 # Generate Homebrew installation script for macOS
 if command -v brew &>/dev/null; then
