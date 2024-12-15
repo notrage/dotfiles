@@ -1,5 +1,4 @@
-{{- if eq .chezmoi.os "darwin" }}
-# About the powerlevel10k terminal theme (instant prompt and theme sourcing moved to the top)
+{{- if eq .chezmoi.os "darwin" }}# About the powerlevel10k terminal theme (instant prompt and theme sourcing moved to the top)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -43,8 +42,7 @@ for dir in $HOME/Documents/latex-projects/*; do
 done
 
 # Opam configuration (silencing output)
-[[ ! -r /Users/dylan/.opam/opam-init/init.zsh ]] || source /Users/dylan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
-{{- else }}
+[[ ! -r /Users/dylan/.opam/opam-init/init.zsh ]] || source /Users/dylan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null{{- else }}
 # For nvim shortcut
 alias nv="nvim"
 
@@ -61,7 +59,7 @@ alias nv="nvim"
 #    fi
 #done
 
+/usr/bin/keychain $HOME/.ssh/id_ed25519
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-{{- end }}
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true{{- end }}
