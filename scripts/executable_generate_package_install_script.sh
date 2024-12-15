@@ -6,7 +6,13 @@ APT_OUTPUT_SCRIPT="$HOME/scripts/install_apt_packages.sh"
 
 # Generate Homebrew installation script for macOS
 if command -v brew &>/dev/null; then
-  echo "Generating Homebrew installation script..."
+
+    # Check if the platform is macOS
+    if [[ "$(uname)" != "Darwin" ]]; then
+      echo "You are on a Linux platform. This script is not intended to run on Linux."
+      exit 1
+    fi
+    echo "Generating Homebrew installation script..."
 
   # Get the top-level formulae from brew deps --tree output
   BREW_FORMULAES=$(brew list --formulae)
@@ -46,7 +52,14 @@ fi
 
 # Generate APT installation script for Linux
 if command -v apt &>/dev/null; then
-  echo "Generating APT installation script..."
+
+    # Check if the platform is macOS
+    if [[ "$(uname)" == "Darwin" ]]; then
+      echo "You are on a macOS platform. This script is not intended to run on macOS."
+      exit 1
+    fi
+
+    echo "Generating APT installation script..."
 
   # Get the list of installed packages
   INSTALLED_PACKAGES=$(dpkg-query -f '${binary:Package}\n' -W | sort | uniq)
@@ -66,6 +79,21 @@ if command -v apt &>/dev/null; then
     sed -i '$ s/\\//' "$APT_OUTPUT_SCRIPT"  # Remove trailing backslash on the last line (Linux compatible)
     echo "" >> "$APT_OUTPUT_SCRIPT"
   fi
+
+  # Move the fonts files
+  echo "# Move the fonts files" >> "$APT_OUTPUT_SCRIPT"
+  echo "SOURCE_DIR=\"\$HOME/.fonts\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "TARGET_DIR=\"\$HOME/.local/share/fonts\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "" >> "$APT_OUTPUT_SCRIPT"
+  echo "mkdir -p \"\$TARGET_DIR\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "if [ -d \"\$SOURCE_DIR\" ]; then" >> "$APT_OUTPUT_SCRIPT"
+  echo "  mv \"\$SOURCE_DIR\"/* \"\$TARGET_DIR\"/" >> "$APT_OUTPUT_SCRIPT"
+  echo "  echo \"Fonts moved successfully to \$TARGET_DIR.\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "else" >> "$APT_OUTPUT_SCRIPT"
+  echo "  echo \"Source directory \$SOURCE_DIR does not exist. Skipping font move.\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "fi" >> "$APT_OUTPUT_SCRIPT"
+  echo "rm -rf \"\$SOURCE_DIR\"" >> "$APT_OUTPUT_SCRIPT"
+  echo "" >> "$APT_OUTPUT_SCRIPT"
 
   # Make the output script executable
   chmod +x "$APT_OUTPUT_SCRIPT"
