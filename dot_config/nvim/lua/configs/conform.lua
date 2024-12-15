@@ -12,6 +12,7 @@ conform.setup({
 		html = { "prettier" }, -- HTML formatter
 		css = { "prettier" }, -- CSS formatter
 		bash = { "shfmt" }, -- Bash formatter
+		sh = { "shfmt" }, -- Sh formatter
 		tex = { "latexindent" }, -- LaTeX formatter
 		markdown = { "prettier" }, -- Markdown formatter
 	},
