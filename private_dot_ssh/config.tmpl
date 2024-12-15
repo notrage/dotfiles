@@ -1,0 +1,13 @@
+Host github.com
+  AddKeysToAgent yes{{- if eq .chezmoi.os "darwin" }}
+  UseKeychain yes{{- else }}{{- end }}
+  IdentityFile ~/.ssh/id_ed25519
+
+Host lima-ubuntux86_64
+  IdentityFile="/Users/dylan/.lima/_config/user"
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+  NoHostAuthenticationForLocalhost=yes
+  User=dylan
+  Hostname=127.0.0.1
+  Port=56788
