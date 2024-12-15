@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+7f6b134de76bc462d166ce97af2242abed605d8d refs/remotes/origin/bot/vimdoc/master
+fd2badc24e675f947162a16c124d395bde80dbd6 refs/remotes/origin/master
+022a2b88947bb4cd82cac7ef77d4ba42545d7a3c refs/remotes/origin/python-f-string

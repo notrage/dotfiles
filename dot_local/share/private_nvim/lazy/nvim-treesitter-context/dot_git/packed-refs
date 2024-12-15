@@ -1,0 +1,18 @@
+# pack-refs with: peeled fully-peeled sorted 
+e9b86673b6be2849067882ebf33d370e13c9b527 refs/remotes/origin/add-nvim-treesitter-context
+a977dd8962b880edd6d9d2b8f21a9fd85e7c73e5 refs/remotes/origin/add-scroll-event
+3308e093fc975e4831e4c4e0aee930074d9ec202 refs/remotes/origin/ci
+7239c7a5f8d100dcf13c44bd51beb85430693b1a refs/remotes/origin/ciluals
+37f8f1069ffb1a6587f170b7f4ab237ef6048cc8 refs/remotes/origin/feat-add-zindex
+6d570b21bb328fd6891bde01ecc424372c435f0c refs/remotes/origin/feat-expose-positions
+beb4392d9575c56b754f4e52d25802dec85c5062 refs/remotes/origin/fix-curswants-bug
+d2102a37ed9a055a15375bd0976b2f86193cd957 refs/remotes/origin/fix-issues
+df4ecbc6e7d9fc3c3b899047bea0ca2789cf0bf6 refs/remotes/origin/handle-multi-line
+81474aff599d9101d9deb49590a6eae837fc779b refs/remotes/origin/highlight
+7765e7302e0f44e413ac428f4cf279d431ea3224 refs/remotes/origin/issue116
+0587fcad4b25f103a652c2a1aa0a9c0167ebe05b refs/remotes/origin/issue77
+f0a601989fe02ed717bb4ca43e1039e15de3e6c8 refs/remotes/origin/master
+e3adddd2d107dfb3c333a99282969b3c8d7f3443 refs/remotes/origin/perf/isvalid
+c9f6b890e03f153a3d23382c3e782921bed227dc refs/remotes/origin/pr-27
+dcbe329171451a77cb53c2eab8bbe3b4595956d8 refs/remotes/origin/refactor/multifiles
+895ec44f5c89bc67ba5440aef3d1f2efa3d59a41 refs/tags/compat/0.7
