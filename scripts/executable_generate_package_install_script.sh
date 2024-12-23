@@ -62,7 +62,7 @@ if command -v apt &>/dev/null; then
     echo "Generating APT installation script..."
 
     # Get the list of installed packages
-    INSTALLED_PACKAGES=$(dpkg-query -f '${binary:Package}\n' -W | sort | uniq)
+    INSTALLED_PACKAGES=$(apt-mark showmanual)
 
     # Create the output script
     echo "#!/bin/bash" >"$APT_OUTPUT_SCRIPT"

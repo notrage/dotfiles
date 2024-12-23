@@ -46,6 +46,8 @@ done
 alias nv="nvim"
 
 /usr/bin/keychain $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$HOST-sh
+/usr/bin/keychain $HOME/.ssh/id_ed25519
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true{{- end }}
