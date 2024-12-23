@@ -7,8 +7,7 @@ Host mandelbrot.e.ujf-grenoble.fr
   User groussod
 
 Host github.com
-  AddKeysToAgent yes{{- if eq .chezmoi.os "darwin" }}
-  UseKeychain yes{{- else }}{{- end }}
+  AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
 
 Host lima-ubuntux86_64
