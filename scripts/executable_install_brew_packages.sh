@@ -65,15 +65,18 @@ jenv \
 jpeg-turbo \
 jpeg-xl \
 latexindent \
+ldns \
 leptonica \
 libarchive \
 libavif \
 libb2 \
+libcbor \
 libcerf \
 libde265 \
 libdeflate \
 libepoxy \
 libevent \
+libfido2 \
 libheif \
 libidn \
 libidn2 \
@@ -115,6 +118,7 @@ luv \
 lz4 \
 lzo \
 m4 \
+make \
 maven \
 md4c \
 mpdecimal \
@@ -131,6 +135,7 @@ openjdk \
 openjdk@11 \
 openjdk@17 \
 openjpeg \
+openssh \
 openssl@3 \
 p11-kit \
 pango \

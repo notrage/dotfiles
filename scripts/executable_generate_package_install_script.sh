@@ -80,21 +80,6 @@ if command -v apt &>/dev/null; then
         echo "" >>"$APT_OUTPUT_SCRIPT"
     fi
 
-    # Add moving the fonts files to the script
-    echo "# Move the fonts files" >>"$APT_OUTPUT_SCRIPT"
-    echo "SOURCE_DIR=\"\$HOME/.fonts\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "TARGET_DIR=\"\$HOME/.local/share/fonts\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "" >>"$APT_OUTPUT_SCRIPT"
-    echo "mkdir -p \"\$TARGET_DIR\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "if [ -d \"\$SOURCE_DIR\" ]; then" >>"$APT_OUTPUT_SCRIPT"
-    echo "    mv \"\$SOURCE_DIR\"/* \"\$TARGET_DIR\"/" >>"$APT_OUTPUT_SCRIPT"
-    echo "    echo \"Fonts moved successfully to \$TARGET_DIR.\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "else" >>"$APT_OUTPUT_SCRIPT"
-    echo "    echo \"Source directory \$SOURCE_DIR does not exist. Skipping font move.\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "fi" >>"$APT_OUTPUT_SCRIPT"
-    echo "rm -rf \"\$SOURCE_DIR\"" >>"$APT_OUTPUT_SCRIPT"
-    echo "" >>"$APT_OUTPUT_SCRIPT"
-
     # Make the output script executable
     chmod +x "$APT_OUTPUT_SCRIPT"
     echo "Generated $APT_OUTPUT_SCRIPT"

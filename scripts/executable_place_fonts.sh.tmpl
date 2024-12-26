@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SOURCE_DIR="$HOME/scripts/.tmp_fonts/"
+TARGET_DIR={{- if eq .chezmoi.os "darwin" }}"$HOME/Library/Fonts/"{{- else }}"$HOME/.local/share/fonts"{{- end }}
+
+mkdir -p "$TARGET_DIR"
+if [ -d "$SOURCE_DIR" ]; then
+    cp "$SOURCE_DIR"/* "$TARGET_DIR"/
+    echo "Fonts moved successfully to $TARGET_DIR."
+else
+    echo "Source directory $SOURCE_DIR does not exist. Skipping font move."
+fi
+rm -rf "$SOURCE_DIR"
