@@ -13,7 +13,7 @@ BraceWrapping:
   BeforeElse:    true
   IndentBraces:  false
 ColumnLimit:     100
-SpaceBeforeParens: Never 
+SpaceBeforeParens: ControlStatements
 AllowShortIfStatementsOnASingleLine: false
 AlignTrailingComments: true
 BinPackParameters: false

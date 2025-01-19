@@ -1,5 +1,4 @@
-{{- if eq .chezmoi.os "darwin" }}
-# New window
+{{- if eq .chezmoi.os "darwin" }}# New window
 map cmd+enter new_window_with_cwd
 map ctrl+shift+enter new_window
 
@@ -31,9 +30,7 @@ map cmd+shift+f goto_layout fat
 map cmd+shift+t goto_layout tall
 
 # Deleting tab management
-map cmd+t no_op
-{{- else }}
-# New window
+map cmd+t no_op{{- else }}# New window
 map alt+enter new_window_with_cwd
 map ctrl+shift+enter new_window
 
@@ -65,8 +62,10 @@ map alt+shift+f goto_layout fat
 map alt+shift+t goto_layout tall
 
 # Deleting tab management
-map alt+t no_op
-{{- end }}
+map alt+t no_op{{- end }}
 
 # Font parameters
 font_size 13.0
+font_family      JetBrainsMono Nerd Font Mono
+bold_font        JetBrainsMono Nerd Font Mono Extra Bold
+bold_italic_font JetBrainsMono Nerd Font Mono Extra Bold Italic
