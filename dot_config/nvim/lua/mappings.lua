@@ -171,14 +171,14 @@ local mappings = {
 }
 
 -- Loop through all mappings and set them
--- for _, category in pairs(mappings) do
--- 	for _, map_data in ipairs(category) do
--- 		-- Checking if the mapping should be skipped
--- 		if map_data.mode ~= "s" then
--- 			map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
--- 		end
--- 	end
--- end
+for _, category in pairs(mappings) do
+	for _, map_data in ipairs(category) do
+		-- Checking if the mapping should be skipped
+		if map_data.mode ~= "s" then
+			map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
+		end
+	end
+end
 
 -- Return the mappings table if needed elsewhere, such as for a cheatsheet
 return mappings

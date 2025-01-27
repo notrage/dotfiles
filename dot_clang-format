@@ -12,7 +12,7 @@ BraceWrapping:
   AfterStruct:   true
   BeforeElse:    true
   IndentBraces:  false
-ColumnLimit:     100
+ColumnLimit:     80
 SpaceBeforeParens: ControlStatements
 AllowShortIfStatementsOnASingleLine: false
 AlignTrailingComments: true

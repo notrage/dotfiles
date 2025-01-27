@@ -1,4 +1,9 @@
-{{- if eq .chezmoi.os "darwin" }}# New window
+{{- if eq .chezmoi.os "darwin" }}# In order to set in fullscreen
+os_window_state maximized
+placement_strategy top-left
+hide_window_decorations yes
+
+# New window
 map cmd+enter new_window_with_cwd
 map ctrl+shift+enter new_window
 
@@ -65,7 +70,7 @@ map alt+shift+t goto_layout tall
 map alt+t no_op{{- end }}
 
 # Font parameters
-font_size 13.0
+font_size 15.0
 font_family      JetBrainsMono Nerd Font Mono
 bold_font        JetBrainsMono Nerd Font Mono Extra Bold
 bold_italic_font JetBrainsMono Nerd Font Mono Extra Bold Italic
