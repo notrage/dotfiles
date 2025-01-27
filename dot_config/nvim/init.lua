@@ -29,13 +29,8 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
--- require('custom.ui')
 require("autocmds")
-
--- I don't want anymore th base mappings
--- require "nvchad.autocmds"
 
 vim.schedule(function()
 	require("mappings")
 end)
-

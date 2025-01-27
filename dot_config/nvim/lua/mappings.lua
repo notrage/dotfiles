@@ -10,9 +10,8 @@ local map = function(mode, lhs, rhs, opts)
 end
 
 -- Define an `unmap` function to simplify key unmapping
-local unmap = function(mode, keybind, opts)
-	opts = opts or {}
-	vim.keymap.del(mode, keybind, opts)
+local unmap = function(mode, keybind)
+    vim.keymap.set(mode, keybind, '<nop>', { noremap = true, silent = true })
 end
 
 -- REMOVING ALL CURRENT UNWANTED DEFAULT MAPPINGS
@@ -31,12 +30,14 @@ unmap("n", "<C-W>d")
 unmap("n", '"')
 unmap("n", "'")
 unmap("n", "`")
-
--- I don't understand why I can't unmap these shit
--- unmap("n", "]d", "]d")
--- unmap("n", "g`", "g`")
--- unmap("n", "g'", "g'")
--- unmap("n", "<C-L>", "<C-L>")
+unmap("n", "<tab>")
+unmap("t", "<tab>")
+unmap("n", "<space>")
+unmap("o", "gc")
+unmap("n", "]d", "]d")
+unmap("n", "g`", "g`")
+unmap("n", "g'", "g'")
+unmap("n", "<C-L>", "<C-L>")
 
 -- Define individual categories with mappings as lists
 local insert_mode_mappings = {
@@ -87,10 +88,10 @@ local toggle_mappings = {
 local buffer_mappings = {
 	{ mode = "n", key = "<leader>x",
         cmd = "<cmd>lua require('nvchad.tabufline').close_buffer()<CR>",
-        desc = "Close buffer"	},
+        desc = "Close buffer" },
 	{ mode = "n", key = "<tab>",
-        cmd = "<cmd>lua require('nvchad.tabufline').next()<CR>",
-        desc = "Go to next buffer" },
+	       cmd = "<cmd>lua require('nvchad.tabufline').next()<CR>",
+	       desc = "Go to next buffer" },
     { mode = "n", key = "<S-tab>",
         cmd = "<cmd>lua require('nvchad.tabufline').prev()<CR>",
         desc = "Go to prev buffer" },
@@ -170,14 +171,14 @@ local mappings = {
 }
 
 -- Loop through all mappings and set them
-for _, category in pairs(mappings) do
-	for _, map_data in ipairs(category) do
-		-- Checking if the mapping should be skipped
-		if map_data.mode ~= "s" then
-			map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
-		end
-	end
-end
+-- for _, category in pairs(mappings) do
+-- 	for _, map_data in ipairs(category) do
+-- 		-- Checking if the mapping should be skipped
+-- 		if map_data.mode ~= "s" then
+-- 			map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
+-- 		end
+-- 	end
+-- end
 
 -- Return the mappings table if needed elsewhere, such as for a cheatsheet
 return mappings

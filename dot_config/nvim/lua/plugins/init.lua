@@ -59,14 +59,14 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	-- Code deplacements plugin
-	{
-		"ggandor/leap.nvim",
-		init = function()
-			require("configs.leap")
-		end,
-		dependencies = {
-			"tpope/vim-repeat",
-		},
-		lazy = false,
-	}
+	-- {
+	-- 	"ggandor/leap.nvim",
+	-- 	init = function()
+	-- 		require("configs.leap")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"tpope/vim-repeat",
+	-- 	},
+	-- 	lazy = false,
+	-- }
 }
