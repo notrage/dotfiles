@@ -1,19 +1,37 @@
-Language:        Cpp
-BasedOnStyle:    LLVM
-IndentWidth:     4
-UseTab:          Never
-BreakBeforeBraces: Allman
+# General fallback settings (applied to all files unless overridden by
+# language-specific configurations)
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 80
+AlignTrailingComments: true
 BraceWrapping:
-  AfterClass:    true
+  AfterClass: true
   AfterControlStatement: true
-  AfterEnum:     true
+  AfterEnum: true
   AfterFunction: true
   AfterNamespace: true
-  AfterStruct:   true
-  BeforeElse:    true
-  IndentBraces:  false
-ColumnLimit:     80
+  AfterStruct: true
+  BeforeElse: true
+  IndentBraces: false
+
+# C++-specific configuration
+---
+Language: Cpp
+BreakBeforeBraces: Allman
+BraceWrapping:
+  AfterClass: true
 SpaceBeforeParens: ControlStatements
 AllowShortIfStatementsOnASingleLine: false
-AlignTrailingComments: true
+BinPackParameters: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+# Java-specific configuration
+---
+Language: Java
+BreakBeforeBraces: Attach  # Java convention
+SpaceBeforeParens: ControlStatements
+AllowShortIfStatementsOnASingleLine: false
 BinPackParameters: false

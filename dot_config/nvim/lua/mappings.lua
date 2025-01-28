@@ -3,10 +3,12 @@
 
 -- Define the map function using vim.api.nvim_set_keymap
 local map = function(mode, lhs, rhs, opts)
-	opts = opts or {}
-	opts.noremap = true
-	opts.silent = opts.silent ~= false -- Default to true for silent if not explicitly set to false
-	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+	if mode ~= "s" then
+        opts = opts or {}
+        opts.noremap = true
+        opts.silent = opts.silent ~= false -- Default to true for silent if not explicitly set to false
+        vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+    end
 end
 
 -- Define an `unmap` function to simplify key unmapping
@@ -31,13 +33,15 @@ unmap("n", '"')
 unmap("n", "'")
 unmap("n", "`")
 unmap("n", "<tab>")
-unmap("t", "<tab>")
 unmap("n", "<space>")
 unmap("o", "gc")
 unmap("n", "]d", "]d")
 unmap("n", "g`", "g`")
 unmap("n", "g'", "g'")
 unmap("n", "<C-L>", "<C-L>")
+
+-- Out of Cheatsheet mappings
+map("t", "<tab>", "<tab>")
 
 -- Define individual categories with mappings as lists
 local insert_mode_mappings = {
@@ -64,12 +68,9 @@ local general_mappings = {
 	{ mode = "n", key = "gx", cmd = "gx", desc = "Open file link" },
 	{ mode = "n", key = '"', cmd = '"', desc = "Open registers list" },
 	{ mode = "n", key = "#", cmd = "#", desc = "Search for next occurence" },
-    { mode = "n", key = "<C-i>",
+    { mode = { "n", "t" }, key = "<C-i>",
         cmd = "<cmd>lua require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }<CR>",
         desc = "terminal toggleable horizontal term" },
-    { mode = "t", key = "<C-i>",
-        cmd = "<cmd>lua require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }<CR>",
-        desc = "terminal toggleable floating terminal" },
 }
 
 local toggle_mappings = {
@@ -170,14 +171,17 @@ local mappings = {
 	lsp = lsp_mappings,
 }
 
--- Loop through all mappings and set them
+-- Loop through all mappings and set themfor _, category in pairs(mappings) do
 for _, category in pairs(mappings) do
-	for _, map_data in ipairs(category) do
-		-- Checking if the mapping should be skipped
-		if map_data.mode ~= "s" then
-			map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
-		end
-	end
+    for _, map_data in ipairs(category) do
+        if type(map_data.mode) == "string" then
+            map(map_data.mode, map_data.key, map_data.cmd, { desc = map_data.desc })
+        elseif type(map_data.mode) == "table" then
+            for _, mode in ipairs(map_data.mode) do
+                map(mode, map_data.key, map_data.cmd, { desc = map_data.desc })
+            end
+        end
+    end
 end
 
 -- Return the mappings table if needed elsewhere, such as for a cheatsheet

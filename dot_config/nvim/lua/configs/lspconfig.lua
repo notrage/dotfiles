@@ -4,3 +4,4 @@ lspconfig.clangd.setup({})
 lspconfig.pylsp.setup({})
 -- lspconfig.stylua.setup{}
 lspconfig.texlab.setup({})
+lspconfig.jdtls.setup({})
