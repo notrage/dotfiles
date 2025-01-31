@@ -18,7 +18,6 @@ return {
 				"latex",
 				"java",
 				"javascript",
-				-- add there any supported language
 			},
 		},
 	},
@@ -58,15 +57,4 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
 	},
-	-- Code deplacements plugin
-	-- {
-	-- 	"ggandor/leap.nvim",
-	-- 	init = function()
-	-- 		require("configs.leap")
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"tpope/vim-repeat",
-	-- 	},
-	-- 	lazy = false,
-	-- }
 }

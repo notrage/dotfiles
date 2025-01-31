@@ -68,9 +68,6 @@ local general_mappings = {
 	{ mode = "n", key = "gx", cmd = "gx", desc = "Open file link" },
 	{ mode = "n", key = '"', cmd = '"', desc = "Open registers list" },
 	{ mode = "n", key = "#", cmd = "#", desc = "Search for next occurence" },
-    { mode = { "n", "t" }, key = "<C-i>",
-        cmd = "<cmd>lua require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }<CR>",
-        desc = "terminal toggleable horizontal term" },
 }
 
 local toggle_mappings = {
@@ -84,6 +81,12 @@ local toggle_mappings = {
 	{ mode = "n", key = "<leader>sl", cmd = "z=", desc = "Toggle spell check" },
 	{ mode = "s", key = "gcc", cmd = "gcc", desc = "Toggle comment line" },
 	{ mode = "s", key = "gc", cmd = "gc", desc = "Toggle comment line" },
+    { mode = { "n", "t" }, key = "<C-i>",
+        cmd = "<cmd>lua require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }<CR>",
+        desc = "Toggle floating terminal" },
+	{ mode = "t", key = "<Esc>",
+        cmd = "<cmd>lua require('nvchad.term').toggle { pos = 'float', id = 'floatTerm' }<CR>",
+        desc = "Close floating terminal" },
 }
 
 local buffer_mappings = {
