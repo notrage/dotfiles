@@ -35,6 +35,7 @@ return {
 	-- LSP server plugin for jumps, rename and autocomplete
 	{
 		"neovim/nvim-lspconfig",
+        lazy = false,
 		config = function()
 			require("configs.lspconfig")
 		end,
