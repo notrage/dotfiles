@@ -20,6 +20,9 @@ alias vm="~/scripts/macos/toggle_lima.sh"
 alias vm_on="limactl start ubuntux86_64 && limactl shell ubuntux86_64"
 alias vm_off="limactl stop ubuntux86_64"
 
+# For the kitten icat functionality
+alias dp="kitten icat"
+
 # For python engine
 export PATH="/usr/local/bin:$PATH"
 
@@ -44,6 +47,9 @@ done
 # Opam configuration (silencing output)
 [[ ! -r /Users/dylan/.opam/opam-init/init.zsh ]] || source /Users/dylan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null{{- else }}# For nvim shortcut
 alias nv="nvim"
+
+# For the kitten icat functionality
+alias dp="kitten icat"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

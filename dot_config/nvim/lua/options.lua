@@ -19,5 +19,5 @@ o.shiftwidth = 4
 -- Relative Numbers
 wo.relativenumber = true
 
--- No Fold in Confif File
+-- No Fold in Config File
 opt.foldenable = false

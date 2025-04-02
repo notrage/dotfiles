@@ -1,8 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-dff50f49c6be3ca690996aca0f12b0143d40a4b9 refs/remotes/origin/bakup3
-c6120d613eb583ae6df366a34c54fc1d78aad880 refs/remotes/origin/clean
-b3be83c0c2835b5d1255cbdd985ece785a521ea9 refs/remotes/origin/extmarks
-4828cb5a3ae56779fff34e9854058d21778db7f3 refs/remotes/origin/test
-7b3225264af17a9e0aff0b4fd2a0fac90b73db53 refs/remotes/origin/v2.0
-e0f06a9aa43112e94beca8283516e6804112fb8e refs/remotes/origin/v2.5
-81f5ff0fb2ce60cc3b2cfc9df928751c2ac4f7e9 refs/remotes/origin/v3.0

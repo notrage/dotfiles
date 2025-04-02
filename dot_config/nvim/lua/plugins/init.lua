@@ -35,7 +35,7 @@ return {
 	-- LSP server plugin for jumps, rename and autocomplete
 	{
 		"neovim/nvim-lspconfig",
-        lazy = false,
+		lazy = false,
 		config = function()
 			require("configs.lspconfig")
 		end,
@@ -57,5 +57,18 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
+	},
+	-- Copilot LSP
+	{
+		"github/copilot.vim",
+		lazy = false,
+		config = function()
+			-- vim.keymap.set("i", "<space>F", 'copilot#Accept("\\<CR>")', {
+			-- 	expr = true,
+			-- 	replace_keycodes = false,
+			-- })
+			vim.g.copilot_no_tab_map = true
+			vim.g.copilot_assume_mapped = true
+		end,
 	},
 }
