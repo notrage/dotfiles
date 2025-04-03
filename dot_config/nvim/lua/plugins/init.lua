@@ -27,7 +27,7 @@ return {
 		event = { "BufNewFile", "BufReadPost" },
 		opts = { mode = "topline", max_lines = 5 },
 	},
-	-- LSP server installer plugin
+    -- LSP server installer plugin
 	{
 		"williamboman/mason.nvim",
 		automatic_installation = true,
@@ -51,24 +51,21 @@ return {
 		end,
 	},
 	-- Additionnal autocomplete plugins
-	{
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/nvim-cmp",
-	},
+	-- {
+	-- 	"hrsh7th/cmp-nvim-lsp",
+	-- 	"hrsh7th/cmp-buffer",
+	-- 	"hrsh7th/cmp-path",
+	-- 	"hrsh7th/cmp-cmdline",
+	-- 	"hrsh7th/nvim-cmp",
+	-- },
 	-- Copilot LSP
 	{
 		"github/copilot.vim",
 		lazy = false,
 		config = function()
-			-- vim.keymap.set("i", "<space>F", 'copilot#Accept("\\<CR>")', {
-			-- 	expr = true,
-			-- 	replace_keycodes = false,
-			-- })
 			vim.g.copilot_no_tab_map = true
 			vim.g.copilot_assume_mapped = true
+            vim.cmd("Copilot disable")
 		end,
 	},
 }
