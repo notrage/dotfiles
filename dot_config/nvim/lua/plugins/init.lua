@@ -59,13 +59,13 @@ return {
 	-- 	"hrsh7th/nvim-cmp",
 	-- },
 	-- Copilot LSP
-	{
-		"github/copilot.vim",
-		lazy = false,
-		config = function()
-			vim.g.copilot_no_tab_map = true
-			vim.g.copilot_assume_mapped = true
-            vim.cmd("Copilot disable")
-		end,
-	},
+	-- {
+	-- 	"github/copilot.vim",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		vim.g.copilot_no_tab_map = true
+	-- 		vim.g.copilot_assume_mapped = true
+	--            vim.cmd("Copilot disable")
+	-- 	end,
+	-- },
 }
