@@ -2,6 +2,18 @@ require("options")
 
 return {
     -- AESTHETIC FEATURES
+    -- Rendering Markdown plugin
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
+        lazy = false,
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
     -- Code coloration plugin
     {
         "nvim-treesitter/nvim-treesitter",
@@ -49,6 +61,8 @@ return {
             require("configs.conform")
         end,
     },
+
+
     -- Copilot LSP
     -- {
     -- 	"github/copilot.vim",

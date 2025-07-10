@@ -15,7 +15,7 @@ conform.setup({
         sh = { "shfmt" },
         tex = { "latexindent" },
         markdown = { "prettier" },
-        nix = { "nixfmt" },
+        nix = { "nixfmt" }
     },
 
     formatters = {
