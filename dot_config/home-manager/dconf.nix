@@ -10,6 +10,18 @@ with lib.hm.gvariant;
       window-state = mkTuple [ 980 640 true ];
     };
 
+    "org/gnome/desktop/a11y" = {
+      always-show-universal-access-status = false;
+    };
+
+    "org/gnome/desktop/a11y/applications" = {
+      screen-keyboard-enabled = false;
+    };
+
+    "org/gnome/desktop/a11y/keyboard" = {
+      mousekeys-enable = false;
+    };
+
     "org/gnome/desktop/app-folders" = {
       folder-children = [ "Utilities" "YaST" ];
     };
@@ -44,12 +56,20 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      cursor-size = 24;
       enable-hot-corners = false;
+      locate-pointer = false;
+      toolkit-accessibility = false;
     };
 
     "org/gnome/desktop/notifications" = {
       application-children = [ "org-gnome-software" "spotify" "vivaldi-stable" ];
       show-banners = true;
+      show-in-lock-screen = false;
+    };
+
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-software" = {
@@ -84,13 +104,26 @@ with lib.hm.gvariant;
       secondary-color = "#000000";
     };
 
+    "org/gnome/desktop/search-providers" = {
+      sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
+    };
+
     "org/gnome/desktop/session" = {
       idle-delay = mkUint32 0;
+    };
+
+    "org/gnome/desktop/sound" = {
+      event-sounds = true;
+      theme-name = "__custom";
     };
 
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = [];
       panel-run-dialog = [ "<Alt>space" ];
+      switch-applications = [ "<Super>Tab" ];
+      switch-applications-backward = [ "<Shift><Super>Tab" ];
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
     };
 
     "org/gnome/evolution-data-server" = {
@@ -108,7 +141,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
-      night-light-last-coordinates = mkTuple [ 45.746001439884814 4.83566 ];
+      night-light-last-coordinates = mkTuple [ 45.746001 4.83566 ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -129,6 +162,9 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       command-history = [ "echo toto" "/home/dylan/.nix-profile/bin/nixGL kitty" ".nix-profile/bin/spotidy" ".nix-profile/bin/spotify" ".nix-profile/bin/vivaldi" "discord" "kitty" "nixGL kitty" "settings" "setting" "spotify" "vivaldi" ];
+      disabled-extensions = [ "no-overview@fthx" ];
+      enabled-extensions = [];
+      favorite-apps = [];
       last-selected-power-profile = "performance";
       welcome-dialog-last-shown-version = "43.9";
     };

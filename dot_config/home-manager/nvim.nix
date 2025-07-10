@@ -7,9 +7,9 @@
     withPython3 = true;
     extraPackages = with pkgs; [
       # Dependencies
-      wl-clipboard # for clipboard (<C-c>)
-      fzf          # for file finder (<leader>+ff)
-      ripgrep      # for live grep (<leader>+fw)
+      xsel # for clipboard (<C-c>)
+      fzf # for file finder (<leader>+ff)
+      ripgrep # for live grep (<leader>+fw)
 
       # Format
       stylua
