@@ -8,15 +8,16 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  imports = [
-    ./dconf.nix # nix-shell -p dconf2nix --command """dconf dump / | dconf2nix > dconf.nix && mv dconf.nix ~/.config/home-manager/"""
-    ./packages.nix
-    ./nvim.nix
-    ./fish.nix
-    ./kitty.nix
-    ./vivaldi.nix
-    ./aliases.nix
-  ];
+  imports =
+    (if builtins.match ".*-linux" (builtins.currentSystem or "") != null then [ ./dconf.nix ] else [ ])
+    ++ [
+      ./packages.nix
+      ./nvim.nix
+      ./fish.nix
+      ./kitty.nix
+      ./vivaldi.nix
+      ./aliases.nix
+    ];
 
   home.sessionVariables = {
     PAGER = "less";
